@@ -1,0 +1,31 @@
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        numSet = set(nums)
+        longest = 0
+
+        for n in nums:
+            # check if its the start of a sequence
+            if (n - 1) not in numSet:
+                length = 0
+                while (n + length) in numSet:
+                    length += 1
+                longest = max(longest, length)
+        
+        return longest
+        
+
+# example: 100, 4, 200, 1, 3, 2
+# sorted: 1, 2, 3, 4, 100, 200
+# output: 4
+
+# three sequences: [1, 2, 3, 4], [100], [200]
+# the beginning of each sequence does not have a left neighbor
+# convert the inital array into a set
+        
+                
+
+
+
+        
+            
+        
